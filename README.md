@@ -29,7 +29,18 @@ Once this is done, you create a ```file_path``` to your file  and read the csv i
 
 There are mutliple steps to be done for the analysis of Mercado Libre, and the first one was for locating possible patterns of Google Search trends. 
 
-It was evident that searches of Mercado increased during specific days in a week and even hours. The below graph shows the weekly search trends of Mercado as well as the heatmap to show 
+It was evident that searches of Mercado increased during specific days in a week and even hours. The below graph shows the weekly search trends of Mercado as well as the heatmap to show evident trends in the searches.
 
-![Mercado_Weekly_Search Trends]("../Resources/Mercado_search_trends_weekly.png")
+![Mercado_Weekly_Search_Trends](Resources/Mercado_search_trends_weekly.png)
 
+
+![Mercado_Search_Trends_Heatmap](Resources/Mercado_weekly_heatmap.png)
+
+
+Based on the graphs it can be noted that there is an increase in search trends in the beginning of the week during late hours (between 20:00 - 00:00).
+
+After analyzing the search trends, we know need to continue by reviewing the data of the stock price and see if they increase during the times when the search trends are the highest and vice versa (correlation).
+
+To analyze this data, we took the first six months of the year 2020 stock prices and search trends. The data produced the following graphs:
+
+![Mercado_search_stock_corr]()
