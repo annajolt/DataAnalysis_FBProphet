@@ -43,4 +43,41 @@ After analyzing the search trends, we know need to continue by reviewing the dat
 
 To analyze this data, we took the first six months of the year 2020 stock prices and search trends. The data produced the following graphs:
 
-![Mercado_search_stock_corr]()
+![Mercado_search_stock_corr](Resources/search_stock_corr.png)
+
+![Mercado_search_stock_corr_2](Resources/search-stock_corr_2.png)
+
+
+By these graphs it is evident that there is some correlation, but not a whole lot.
+
+Following this analysis, we conducted a forecast for the popularity of Mercado through Facebook Prophet.
+
+
+To do a prediction through Prophet, we would need to create a Dataframe out of the google search trends and reset the index so that the both the date and google search trends are columns.
+
+```
+#Using the df_mercado_trends DataFrame, reset the index so the date information is no longer the index
+mercado_prophet_df = df_mercado_trends.reset_index()
+
+#Label the columns ds and y so that the syntax is recognized by Prophet
+mercado_prophet_df.columns = ['ds', 'y']
+
+#Drop an NaN values from the prophet_df DataFrame
+mercado_prophet_df = mercado_prophet_df.dropna()
+```
+
+Afterwards, we create a model, fit it to our data, create a dataframe for future trend predictions and then make the actual predictions.
+The resulting dataframe we look like the following snippet with 22 columns predicting:
+- trend
+- yhat_lower	
+- yhat_upper	
+- trend_lower	
+- weekly	
+- weekly_lower	
+- weekly_upper	
+- yhat
+- and more
+
+![Prophet_predictions](Resources/prophet_predictions.png)
+
+
