@@ -15,21 +15,23 @@
 
 ## *Analysis*
 
-Because the analysis will be conducted in a Google Colab Notebook, you will need to cofigure the worskspace and connect your data to your Drive. This is done by mounting the Drive into the Notebook:
+Because the analysis will be conducted in a Google Colab Notebook, you will need to cofigure the worskspace and connect your data to your Drive. This is done by mounting the Drive into the Notebook, connecting the filepath and creating a DataFrame:
 
 
 ```
-# Upload the "google_hourly_search_trends.csv" file into Colab, 
+# Upload the "google_hourly_search_trends.csv" file into Colab 
 # then store in a Pandas DataFrame
 # Set the "Date" column as the Datetime Index.
 from google.colab import drive
 drive.mount('/content/drive')
+from google.colab import files
+file_path = Path("/content/drive/MyDrive/challenge_11/Resources/google_hourly_search_trends.csv")
+df_mercado_trends = pd.read_csv(file_path, index_col="Date", infer_datetime_format=True, parse_dates=True)
 ```
-Once this is done, you create a ```file_path``` to your file  and read the csv into a Pandas DataFrame.
 
-There are mutliple steps to be done for the analysis of Mercado Libre, and the first one was for locating possible patterns of Google Search trends. 
+There are mutliple steps that need to be accomplished to analyze the financial and user data of Mercado Libre, and the first one was for locating possible patterns of Google Search trends. 
 
-It was evident that searches of Mercado increased during specific days in a week and even hours. The below graph shows the weekly search trends of Mercado as well as the heatmap to show evident trends in the searches.
+It was evident that searches of Mercado increased during specific days in a week and even hours. The below graph shows the weekly search trends of Mercado as well as the heatmap to show these evident trends in the searches.
 
 ![Mercado_Weekly_Search_Trends](Resources/Mercado_search_trends_weekly.png)
 
@@ -37,9 +39,9 @@ It was evident that searches of Mercado increased during specific days in a week
 ![Mercado_Search_Trends_Heatmap](Resources/Mercado_weekly_heatmap.png)
 
 
-Based on the graphs it can be noted that there is an increase in search trends in the beginning of the week during late hours (between 20:00 - 00:00).
+Based on the graphs it can be noted that there is an increase in search trends in the beginning of a week during late hours (between 20:00 - 00:00).
 
-After analyzing the search trends, we know need to continue by reviewing the data of the stock price and see if they increase during the times when the search trends are the highest and vice versa (correlation).
+After analyzing the search trends, we now need to continue by reviewing the data of the stock price and see if they increase during the times when the search trends are the highest and vice versa (correlation).
 
 To analyze this data, we took the first six months of the year 2020 stock prices and search trends. The data produced the following graphs:
 
@@ -80,4 +82,11 @@ The resulting dataframe we look like the following snippet with 22 columns predi
 
 ![Prophet_predictions](Resources/prophet_predictions.png)
 
+
+Based on the predictions, Mercado Libre popularity will decrease.
+
+Further analysis was done on Mercado to infer the revenue for the next quarter. For the quarter of July 2020 - August 2020 the estimate results are:
+- Best likely revenue will be $$23.52 million
+- Worse likely revenue will be $19.72 million
+- Most likely revenue will be $21.62 million
 
