@@ -86,7 +86,7 @@ The resulting dataframe we look like the following snippet with 22 columns predi
 Based on the predictions, Mercado Libre popularity will decrease.
 
 Further analysis was done on Mercado to infer the revenue for the next quarter. For the quarter of July 2020 - August 2020 the estimate results are:
-- Best likely revenue will be $$23.52 million
-- Worse likely revenue will be $19.72 million
-- Most likely revenue will be $21.62 million
+- Best likely revenue will be \\$23.52 million
+- Worse likely revenue will be \\$19.72 million
+- Most likely revenue will be \\$21.62 million
 
