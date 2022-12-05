@@ -15,7 +15,7 @@
 
 ## *Analysis*
 
-Because the analysis will be conducted in a Google Colab Notebook, you will need to cofigure the worskspace and connect your data to your Drive. This is done by mounting the Drive into the Notebook, connecting the filepath and creating a DataFrame:
+Because the analysis will be conducted in a Google Colab Notebook, you will need to configure the worskspace and connect your data to your Drive. This is done by mounting the Drive into the Notebook, connecting the filepath and creating a DataFrame (of the data):
 
 
 ```
